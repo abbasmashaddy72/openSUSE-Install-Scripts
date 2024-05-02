@@ -6,6 +6,8 @@ execute_command() {
 }
 
 execute_command "git config --global credential.helper store" "Git Store Credential"
+execute_command "git config --global user.name \"abbasmashaddy72\"" "Git UserName"
+execute_command "git config --global user.email abbasmashaddy72@gmail.com" "Git Email"
 execute_command "sudo systemctl restart nginx.service php-fpm.service apparmor.service" "Restart System Services"
 
 # Cloning Projects
