@@ -73,7 +73,7 @@ execute_command "rm -rf linux_signing_key.pub" "Removing Anydesk Repo"
 
 # Import Visual Studio Code repository configuration
 echo "Importing Visual Studio Code repository configuration..."
-execute_command "sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/vscode.repo'" "Visual Studio Code repository configuration"
+execute_command "execute_command 'sudo sh -c "echo -e [code]\\nname=Visual Studio Code\\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\\nenabled=1\\ntype=rpm-md\\ngpgcheck=1\\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc > /etc/zypp/repos.d/vscode.repo"' "Visual Studio Code repository configuration"" "Visual Studio Code repository configuration"
 
 # Refresh repositories
 echo "Refreshing repositories..."
@@ -103,7 +103,7 @@ execute_command "sudo zypper install mariadb-server" "MariaDB Server"
 execute_command "sudo zypper install mozilla-nss-tools jq xsel" "Mozilla NSS Tools"
 execute_command "sudo zypper install code" "Visual Studio Code"
 execute_command "sudo zypper install android-studio" "Android Studio"
-execute_command "sudo zypper install php8 php8-pear php8-devel php8-bcmath php8-gd php8-mbstring php8-zip php8-curl php8-mysql php8-openssl php8-posix php8-fpm php8-pdo php8-bcmath php8-dba php8-imagick php8-devel php8-pgsql php8-fileinfo php8-exif" "PHP 8"
+execute_command "sudo zypper install php8 php8-pear php8-devel php8-bcmath php8-gd php8-mbstring php8-zip php8-curl php8-mysql php8-openssl php8-posix php8-intl php8-fpm php8-pdo php8-bcmath php8-dba php8-imagick php8-devel php8-pgsql php8-fileinfo php8-exif" "PHP 8"
 
 # Clone Powerline fonts repository
 echo "Cloning Powerline fonts repository..."
@@ -121,6 +121,8 @@ execute_command "php -r \"if (hash_file('sha384', 'composer-setup.php') === 'dac
 execute_command "php composer-setup.php" "Composer installation"
 execute_command "unlink composer-setup.php" "Remove Composer setup file"
 execute_command "sudo mv composer.phar /usr/local/bin/composer" "Moving Composer Globally"
+echo 'export PATH="$HOME/.composer/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 composer -v
 
 # Install Valet for Linux
