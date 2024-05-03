@@ -54,6 +54,8 @@ execute_command "sudo zypper addrepo https://download.opensuse.org/repositories/
 execute_command "sudo zypper addrepo https://download.opensuse.org/repositories/home:deltafox/openSUSE_Tumbleweed/home:deltafox.repo" "Ferdium" # Checked
 execute_command "sudo zypper addrepo https://download.opensuse.org/repositories/home:ahjolinna/openSUSE_Tumbleweed/home:ahjolinna.repo" "Firefox Developer Edition" # Checked
 execute_command "sudo zypper addrepo https://download.opensuse.org/repositories/home:ecsos/openSUSE_Tumbleweed/home:ecsos.repo" "Android Studio | FileZilla | Dbeaver" # Checked
+execute_command "sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg" "Sublime Text" # Checked
+execute_command "sudo zypper addrepo -g -f https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo" "Sublime Text" # Checked
 
 # Removing Anydesk Repo
 execute_command "rm -rf AnyDesk-OpenSUSE.repo" "Removing Anydesk Repo"
@@ -103,6 +105,7 @@ execute_command "sudo zypper install mariadb-server" "MariaDB Server"
 execute_command "sudo zypper install mozilla-nss-tools jq xsel" "Mozilla NSS Tools"
 execute_command "sudo zypper install code" "Visual Studio Code"
 execute_command "sudo zypper install android-studio" "Android Studio"
+execute_command "sudo zypper install sublime-text" "Sublime Text"
 execute_command "sudo zypper install php8 php8-pear php8-devel php8-bcmath php8-gd php8-mbstring php8-zip php8-curl php8-mysql php8-openssl php8-posix php8-intl php8-fpm php8-pdo php8-bcmath php8-dba php8-imagick php8-devel php8-pgsql php8-fileinfo php8-exif" "PHP 8"
 
 # Clone Powerline fonts repository
